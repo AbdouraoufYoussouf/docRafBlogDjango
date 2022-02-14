@@ -1,3 +1,7 @@
 body{
-    background-color: #ebeff5;
+    background-color: red;
+    margin-top: 500px;
+}
+.logo{
+    width: 60px;
 }
