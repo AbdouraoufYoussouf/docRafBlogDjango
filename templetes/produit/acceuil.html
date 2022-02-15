@@ -4,7 +4,7 @@
 <br>
 <div class="row">
 	<div class="col-md-5">
-		<h5>Clients:</h5>
+		<h5>Les Clients:</h5>
 		<hr>
 		<div class="card card-body">
 			<a class="btn btn-primary  btn-sm btn-block" href="">Créer Un Client</a>
@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="col-md-7">
-		<h5>Les 5 Dernières Comamndes</h5>
+		<h5>Les Comamndes</h5>
 		<hr>
 		<div class="card card-body">
 			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'add_Commande' %}">Ajouter une Commande</a>
@@ -52,7 +52,7 @@
 					<td>{{commande.status}}</td>
 					<td>{{commande.date_creation}}</td>
 					<td><a href="{% url 'edit_Commande' commande.id %}" class="btn btn-primary">Edit</a></td>
-					<td><a href="{% url 'deletec' commande.id %}" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a></td>
+					<td><a onclick="return confirm('Vous êtes sûre de Supprimer')" href="{% url 'deletec' commande.id %}" class="btn btn-danger" >Delete</a></td>
 				</tr>
 				{% endfor %}
 
