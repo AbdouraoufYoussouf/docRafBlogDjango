@@ -51,12 +51,27 @@
 					<td>{{commande.client}}</td>
 					<td>{{commande.status}}</td>
 					<td>{{commande.date_creation}}</td>
-					<td><a class="btn btn-primary">Edit</a></td>
-					<td><a class="btn btn-danger">Delete</a></td>
+					<td><a href="{% url 'edit_Commande' commande.id %}" class="btn btn-primary">Edit</a></td>
+					<td><a href="{% url 'deletec' commande.id %}" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a></td>
 				</tr>
 				{% endfor %}
 
 			</table>
+			<!-- Modal -->
+			<div class="modal  modal-sm" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						
+						<div class="modal-body">
+							Vouvez-vous vraiment le supprimer
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+							<button  type="button" class="btn btn-danger">Supprimer</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

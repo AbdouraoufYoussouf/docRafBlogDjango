@@ -2,12 +2,12 @@
 
     {% block content %}
     <div class='container'> 
-        <h1>Ajouter une Commande</h1>
+        <h1>{{titre}}</h1>
         <div class="card card-body">
             <form action="" method="POST">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" name="Envoyer" class="btn btn-primary">
+                <input type="submit" name="Envoyer" class="btn-m btn-primary">
             </form>
         </div>
      </div>
