@@ -1,10 +1,20 @@
 from importlib.resources import path
-from pyexpat.errors import messages
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.contrib.auth import authenticate,login
 
 from compte.forms import CreateUser
 
-def login(request):
+def logine(request):
+    if request.method=='POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request,username=username,password=password)
+        if user is not None:
+            login(request,user)
+            return redirect('home')
+        else:
+            messages.info(request,"username ou mot de passe incorrect")
     return render(request,'compte/login.html')
 
 

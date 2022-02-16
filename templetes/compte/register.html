@@ -71,7 +71,9 @@
 					<h3 id="form-title">Creer un Compte</h3>
 				</div>
                 {{form.errors}}
-				
+				{% for message in messages %}
+				<p class="bg-success text-white">{{ message }}</p>
+				{% endfor %}
 				<div class="d-flex justify-content-center form_container">
 
 					<form method="POST" action="">
